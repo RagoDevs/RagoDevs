@@ -1,0 +1,28 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Install sshpass
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      # Step 3: Copy files to the server
+      - name: Copy Files to Server
+        env:
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+        run: |
+          sshpass -p "$SSH_PASSWORD" rsync -avz --delete -e "ssh -p 22 -o StrictHostKeyChecking=no" ./ "$SSH_USERNAME@$SERVER_HOST:/var/www/ragodevs"
