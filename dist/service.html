@@ -9,6 +9,14 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/alpinejs" defer></script>
+    <script>
+        const currentUrl = window.location.href;
+        if (currentUrl.endsWith('.html')) {
+            const newUrl = currentUrl.replace('.html', '');
+            window.history.replaceState(null, '', newUrl);
+        }
+    </script>
+    
     <style>
         [x-cloak] {
             display: none;
@@ -21,7 +29,7 @@
     <!-- Navbar -->
     <header x-data="{open:false}" class="relative shadow py-2 font-inter">
         <nav aria-label="main-nav" class="mx-[6%] my-4 flex items-center justify-between">
-            <a href="#" aria-label="Devs Logo" class="font-roboto font-bold text-[0px]">
+            <a href="./index.html" aria-label="Devs Logo" class="font-roboto font-bold text-[0px]">
                 <span class="text-yellow text-2xl">Rago</span>
                 <span class="text-2xl">Devs</span>
             </a>

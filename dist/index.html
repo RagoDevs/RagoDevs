@@ -10,6 +10,14 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/alpinejs" defer></script>
+    <script>
+        const currentUrl = window.location.href;
+        if (currentUrl.endsWith('.html')) {
+            const newUrl = currentUrl.replace('.html', '');
+            window.history.replaceState(null, '', newUrl);
+        }
+    </script>
+
     <style>
         [x-cloak] {
             display: none;
@@ -25,7 +33,7 @@
     <!-- Navbar -->
     <header x-data="{open:false}" class="relative shadow py-2 font-inter">
         <nav aria-label="main-nav" class="mx-[6%] my-4 flex items-center justify-between">
-            <a href="#" aria-label="Devs Logo" class="font-roboto font-bold text-[0px]">
+            <a href="./index.html" aria-label="Devs Logo" class="font-roboto font-bold text-[0px]">
                 <span class="text-yellow text-2xl">Rago</span>
                 <span class="text-2xl">Devs</span>
             </a>
@@ -112,63 +120,73 @@
                 applications.</p>
 
             <div class="flex gap-5 items-center mt-[50px]">
-                <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition"> <a @click="open = false" href="./contact.html">Connect With Us</a></button>
+                <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition"> <a
+                        @click="open = false" href="./contact.html">Connect With Us</a></button>
                 <button class="btn btn-secondary"><a href="service.html#projects">Browse Our Works</a></button>
             </div>
         </div>
 
         <div class="hidden md:block">
-            <img src="images/hr_07.jpg" alt="">
+            <img src="images/hr_07.webp" alt="">
         </div>
     </div>
 
     <!-- services -->
     <div class="mx-[6%] px-4 mt-28 grid place-items-center">
         <h1 class="font-semibold text-4xl text-center leading-[56px]">Services that drive success and innovation</h1>
-        <p class="mt-5 font-medium text-center text-[18px] text-[#00000080] leading-7 ">We deliver innovative solutions that empower 
-            organizations to thrive. With cutting-edge technology and expert guidance, we transform operations and drive growth. 
+        <p class="mt-5 font-medium text-center text-[18px] text-[#00000080] leading-7  px-7">We deliver innovative
+            solutions that empower
+            organizations to thrive. With cutting-edge technology and expert guidance, we transform operations and drive
+            growth.
             Our focus on collaboration and results ensures lasting value and forward-thinking excellence.
-            </p>
+        </p>
 
-        <div class="grid md:grid-cols-3 justify-items-center gap-x-8 gap-y-10 mt-8">
+        <div class="grid md:grid-cols-3 justify-items-center gap-x-8 gap-y-10 mt-8 px-7">
             <div class="flex flex-col justify-center items-center w-[320px]">
                 <div class="relative h-20 w-20 rounded-full bg-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
-                        <path stroke-linecap="round" stroke-linejoin="round" 
-                        d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
                     </svg>
-                      
+
 
                 </div>
                 <h3 class="pt-4 text-center text-[20px] leading-8 text-[#6854FC] tracking-[0.02em]">UI/UX Designing
                 </h3>
-                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We design intuitive and engaging user experiences that inspire. </p>
+                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We design intuitive and
+                    engaging user experiences that inspire. </p>
             </div>
             <div class="flex flex-col justify-center items-center w-[310px]">
                 <div class="relative h-20 w-20 rounded-full bg-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
-                        <path stroke-linecap="round" stroke-linejoin="round" 
-                        d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
-                      </svg>
-                      
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+                    </svg>
+
 
                 </div>
-                <h3 class="pt-4 text-center text-[20px] leading-8 text-[#6854FC] tracking-[0.02em]">Front-end Development
+                <h3 class="pt-4 text-center text-[20px] leading-8 text-[#6854FC] tracking-[0.02em]">Front-end
+                    Development
                 </h3>
-                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We design responsive frontends with seamless functionality. </p>
+                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We design responsive
+                    frontends with seamless functionality. </p>
             </div>
             <div class="flex flex-col justify-center items-center w-[320px]">
                 <div class="relative h-20 w-20 rounded-full bg-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
-                        <path stroke-linecap="round" stroke-linejoin="round" 
-                        d="M21.75 17.25v-.228a4.5 4.5 0 0 0-.12-1.03l-2.268-9.64a3.375 3.375 0 0 0-3.285-2.602H7.923a3.375 3.375 0 0 0-3.285 2.602l-2.268 9.64a4.5 4.5 0 0 0-.12 1.03v.228m19.5 0a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3m19.5 0a3 3 0 0 0-3-3H5.25a3 3 0 0 0-3 3m16.5 0h.008v.008h-.008v-.008Zm-3 0h.008v.008h-.008v-.008Z" />
-                      </svg>
-                      
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.75 17.25v-.228a4.5 4.5 0 0 0-.12-1.03l-2.268-9.64a3.375 3.375 0 0 0-3.285-2.602H7.923a3.375 3.375 0 0 0-3.285 2.602l-2.268 9.64a4.5 4.5 0 0 0-.12 1.03v.228m19.5 0a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3m19.5 0a3 3 0 0 0-3-3H5.25a3 3 0 0 0-3 3m16.5 0h.008v.008h-.008v-.008Zm-3 0h.008v.008h-.008v-.008Z" />
+                    </svg>
+
 
                 </div>
                 <h3 class="pt-4 text-center text-[20px] leading-8 text-[#6854FC] tracking-[0.02em]">Back-end Development
                 </h3>
-                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We build robust backends that ensure smooth and secure system performance. </p>
+                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We build robust backends
+                    that ensure smooth and secure system performance. </p>
             </div>
             <div class="flex flex-col justify-center items-center w-[310px]">
                 <div class="relative h-20 w-20 rounded-full bg-slate-400">
@@ -181,33 +199,38 @@
                 </div>
                 <h3 class="pt-4 text-center text-[20px] leading-8 text-[#6854FC] tracking-[0.02em]">Graphic Designing
                 </h3>
-                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We craft impactful, visually stunning designs for your brand. </p>
+                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We craft impactful, visually
+                    stunning designs for your brand. </p>
             </div>
             <div class="flex flex-col justify-center items-center w-[310px]">
                 <div class="relative h-20 w-20 rounded-full bg-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
-                        <path stroke-linecap="round" stroke-linejoin="round" 
-                        d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
-                      </svg>
-                      
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                    </svg>
+
 
                 </div>
                 <h3 class="pt-4 text-center text-[20px] leading-8 text-[#6854FC] tracking-[0.02em]">Cloud Deployment
                 </h3>
-                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We offer seamless cloud deployment for optimal scalability. </p> 
+                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We offer seamless cloud
+                    deployment for optimal scalability. </p>
             </div>
             <div class="flex flex-col justify-center items-center w-[310px]">
                 <div class="relative h-20 w-20 rounded-full bg-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
-                        <path stroke-linecap="round" stroke-linejoin="round" 
-                        d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0 1 12 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
-                      </svg>
-                      
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0 1 12 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
+                    </svg>
+
 
                 </div>
                 <h3 class="pt-4 text-center text-[20px] leading-8 text-[#6854FC] tracking-[0.02em]">Database Management
                 </h3>
-                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We ensure secure and efficient database management. </p> 
+                <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We ensure secure and
+                    efficient database management. </p>
             </div>
 
 
@@ -242,13 +265,14 @@
     <!-- our-process -->
     <div class="mx-[6%] px-4 my-32 lg:px-20 lg:mt-32 md:grid grid-cols-[1fr,2fr] ">
         <div class="rounded-lg bg-slate-400">
-            <img style="height: 800px; object-fit: cover; filter: blur(2px); filter: grayscale(1);" class="rounded-lg " src="../src/img/proc.jpg" alt="" srcset=""> 
+            <img style="height: 800px; object-fit: cover; filter: blur(2px); filter: grayscale(1);" class="rounded-lg "
+                src="./images/proc.webp" alt="" srcset="">
         </div>
 
         <div class="mt-20 md:mt-0 md:ml-16">
             <h1 class="font-semibold text-4xl leading-[56px] ">Our Process</h1>
             <p class="mt-5 font-medium text-[18px]  text-[#00000080] leading-7 ">
-                We begin with Discovery to understand your needs, then create a tailored Plan. Next, 
+                We begin with Discovery to understand your needs, then create a tailored Plan. Next,
                 we Execute with precision and Deliver the final solution that exceeds expectations.
             </p>
 
@@ -264,7 +288,8 @@
                     <div>
                         <h3 class="font-medium text-[18px] leading-7">Discovery</h3>
                         <p class="font-normal text-[18px] text-[#00000080]">
-                            We take the time to thoroughly understand your idea, objectives, and challenges, ensuring a clear and informed roadmap for success.
+                            We take the time to thoroughly understand your idea, objectives, and challenges, ensuring a
+                            clear and informed roadmap for success.
                         </p>
                     </div>
                 </div>
@@ -286,7 +311,7 @@
                     <div>
                         <h3 class="font-medium text-[18px] leading-7">Plan</h3>
                         <p class="font-normal text-[18px] text-[#00000080]">
-                            Using insights from Discovery, we develop a customized strategy that 
+                            Using insights from Discovery, we develop a customized strategy that
                             outlines the most effective approach to achieve your goals.
                         </p>
                     </div>
@@ -304,7 +329,7 @@
                     <div>
                         <h3 class="font-medium text-[18px] leading-7">Execute</h3>
                         <p class="font-normal text-[18px] text-[#00000080]">
-                            Our experienced team works diligently to bring the plan to life, focusing on precision, 
+                            Our experienced team works diligently to bring the plan to life, focusing on precision,
                             efficiency, and quality throughout the process.
                         </p>
                     </div>
@@ -324,7 +349,7 @@
                     <div>
                         <h3 class="font-medium text-[18px] leading-7">Deliver</h3>
                         <p class="font-normal text-[18px] text-[#00000080]">
-                            We deliver a final solution that not only meets but exceeds your expectations, 
+                            We deliver a final solution that not only meets but exceeds your expectations,
                             ensuring it drives lasting results and value for your organization.
                         </p>
                     </div>
@@ -343,7 +368,7 @@
 
             <p
                 class="text-center md:text-left pt-10 md:pt-0 md:pl-8 font-normal text-[18px] text-[#00000080] leading-7">
-                As a lean creative agency, we tackle challenges by combining innovative design and expert development. 
+                As a lean creative agency, we tackle challenges by combining innovative design and expert development.
                 Our efficient approach ensures we deliver impactful solutions that drive success and elevate your brand.
             </p>
 
