@@ -26,3 +26,18 @@ jobs:
           SERVER_HOST: ${{ secrets.HOST }}
         run: |
           sshpass -p "$SSH_PASSWORD" rsync -avz --delete -e "ssh -p 22 -o StrictHostKeyChecking=no" ./ "$SSH_USERNAME@$SERVER_HOST:/var/www/ragodevs"
+
+      # Step 4: Run build commands on the server
+      - name: Run Build Commands on Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /var/www/ragodevs
+            npm install
+            npm run build:css
+            npm run build
+
