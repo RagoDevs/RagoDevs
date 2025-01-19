@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from 'react'
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -9,24 +10,24 @@ function Header() {
         <>
             <header x-data="{open:false}" class="relative shadow py-2 font-inter">
                 <nav aria-label="main-nav" class="mx-[6%] my-4 flex items-center justify-between">
-                    <a href="./index.html" aria-label="Devs Logo" class="font-roboto font-bold text-[0px]">
+                    <Link to='/' aria-label="Devs Logo" class="font-roboto font-bold text-[0px]">
                         <span class="text-yellow text-2xl">Rago</span>
                         <span class="text-2xl">Devs</span>
-                    </a>
+                    </Link>
 
                     {/*Large Sreen Nav Items */}
                     <ul class="hidden md:flex items-center  space-x-8 lg:space-x-16">
                         <li>
-                            <a href="./index.html">Home</a>
+                            <Link to='/'>Home</Link>
                         </li>
                         <li>
-                            <a href="./about.html">About Us</a>
+                            <Link to='/About'>About Us</Link>
                         </li>
                         <li>
-                            <a href="./service.html">Service</a>
+                        <Link to='/Services'>Services</Link>
                         </li>
                         <li>
-                            <a href="./contact.html">Contact Us</a>
+                        <Link to='/Contact'>Contact Us</Link>
                         </li>
                     </ul>
 
@@ -58,16 +59,16 @@ function Header() {
 
                 <ul class="flex flex-col space-y-8 pt-8">
                     <li>
-                        <a onClick={() => setOpen(true)} href="./index.html">Home</a>
+                        <Link to='/' onClick={() => setOpen(true)}>Home</Link>
                     </li>
                     <li>
-                        <a onClick={() => setOpen(true)} href="./about.html">About Us</a>
+                        <Link to='/About' onClick={() => setOpen(true)}>About Us</Link>
                     </li >
                     <li>
-                        <a onClick={() => setOpen(true)} href="./service.html">Service</a>
+                        <Link to='/Services' onClick={() => setOpen(true)} >Service</Link>
                     </li >
                     <li>
-                        <a onClick={() => setOpen(true)} href="./contact.html">Contact Us</a>
+                        <Link to='/Contact' onClick={() => setOpen(true)}>Contact Us</Link>
                     </li >
                 </ul >
 

@@ -1,6 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
 import Header from '../Components/Header'
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import Footer from '../Components/Footer';
+import Proc1 from '../Assets/proc1.webp'
 
 function Home() {
 
@@ -25,9 +29,13 @@ function Home() {
                         applications.</p>
 
                     <div class="flex gap-5 items-center mt-[50px]">
-                        <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition"> <a
-                            onClick={() => setOpen(true)} href="./contact.html">Connect With Us</a></button>
-                        <button class="btn btn-secondary"><a href="service.html#projects">Browse Our Works</a></button>
+                        <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition"> <Link to='/Contact'
+                            onClick={() => setOpen(true)}>Connect With Us</Link></button>
+                        <button class="btn btn-secondary">
+                            <HashLink smooth to='/Services#projects' >
+                                Browse Our Works
+                            </HashLink>
+                        </button>
                     </div>
                 </div>
 
@@ -46,8 +54,8 @@ function Home() {
                     Our focus on collaboration and results ensures lasting value and forward-thinking excellence.
                 </p>
 
-                <div class="grid md:grid-cols-3 justify-items-center gap-x-10 gap-y-10 mt-8 px-7">
-                    <div class="flex flex-col justify-center items-center w-[300px]">
+                <div class="grid md:grid-cols-3 justify-items-center gap-x-12 gap-y-10 mt-8 px-6">
+                    <div class="flex flex-col justify-center items-center w-full max-w-[290px]">
                         <div class="relative h-20 w-20 rounded-full bg-slate-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
@@ -60,9 +68,9 @@ function Home() {
                         <h3 class="pt-4 text-center text-[20px] leading-8 text-[#6854FC] tracking-[0.02em]">UI/UX Designing
                         </h3>
                         <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We design intuitive and
-                            engaging user experiences that inspire. </p>
+                            engaging user experiences. </p>
                     </div>
-                    <div class="flex flex-col justify-center items-center w-[300px]">
+                    <div class="flex flex-col justify-center items-center w-full max-w-[290px]">
                         <div class="relative h-20 w-20 rounded-full bg-slate-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
@@ -78,7 +86,7 @@ function Home() {
                         <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We design responsive
                             frontends with seamless functionality. </p>
                     </div>
-                    <div class="flex flex-col justify-center items-center w-[300px]">
+                    <div class="flex flex-col justify-center items-center w-full max-w-[300px]">
                         <div class="relative h-20 w-20 rounded-full bg-slate-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
@@ -91,9 +99,9 @@ function Home() {
                         <h3 class="pt-4 text-center text-[20px] leading-8 text-[#6854FC] tracking-[0.02em]">Back-end Development
                         </h3>
                         <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We build robust backends
-                            that ensure smooth and secure system performance. </p>
+                            that ensure smooth and secure. </p>
                     </div>
-                    <div class="flex flex-col justify-center items-center w-[300px]">
+                    <div class="flex flex-col justify-center items-center w-full max-w-[290px]">
                         <div class="relative h-20 w-20 rounded-full bg-slate-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="absolute top-4 left-4 w-12 h-12 ">
@@ -107,7 +115,7 @@ function Home() {
                         <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We craft impactful, visually
                             stunning designs for your brand. </p>
                     </div>
-                    <div class="flex flex-col justify-center items-center w-[300px]">
+                    <div class="flex flex-col justify-center items-center w-full max-w-[290px]">
                         <div class="relative h-20 w-20 rounded-full bg-slate-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
@@ -122,7 +130,7 @@ function Home() {
                         <p class="text-center text-lg leading-7 text-[#00000080] tracking-[0.02em]">We offer seamless cloud
                             deployment for optimal scalability. </p>
                     </div>
-                    <div class="flex flex-col justify-center items-center w-[300px]">
+                    <div class="flex flex-col justify-center items-center w-full max-w-[290px]">
                         <div class="relative h-20 w-20 rounded-full bg-slate-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="absolute top-4 left-4 w-12 h-12">
@@ -145,8 +153,8 @@ function Home() {
             {/* our process */}
             <div class="mx-[6%] px-4 my-32 lg:px-20 lg:mt-32 md:grid grid-cols-[1fr,2fr] ">
                 <div class="rounded-lg bg-slate-400">
-                    <img style={{height: '800px', objectFit: 'cover', filter: 'blur(2px) grayscale(1)'}} class="rounded-lg "
-                        src="./images/proc1.webp" alt="" srcset="" />
+                    <img style={{ height: '800px', objectFit: 'cover', filter: 'grayscale(1)' }} class="rounded-lg "
+                        src={Proc1} alt="" srcset="" />
                 </div>
 
                 <div class="mt-20 md:mt-0 md:ml-16">
@@ -254,6 +262,8 @@ function Home() {
 
                 </div>
             </div>
+
+            <Footer />
         </>
     )
 }
