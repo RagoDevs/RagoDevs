@@ -20,9 +20,6 @@ function Services() {
                 <h1 class="font-bold text-[48px] leading-[58px] capitalize pb-3">
                     Services we provide
                 </h1>
-                <p class="font-normal text-[18px] leading-7 text-center">
-                    We offer design, development, cloud deployment, and UI/UX solutions to drive innovation and success.
-                </p>
             </div>
 
             <div class="container mx-auto px-4 lg:px-20">
@@ -37,10 +34,7 @@ function Services() {
                         </div>
                         <h3 class="font-semibold text-2xl leading-7 py-5">UI/UX Design</h3>
                         <p class="font-normal text-[18px] leading-[27px]">
-                            Viverra ut potenti aliquam feugiat dui imperdiet laoreet tempus sed. Elit cursus est lorem in est id
-                            nec. Quis diam posuere at nisl eget turpis sagittis nunc. Aliquet et ultrices purus, id. Sagittis
-                            erat
-                            nunc in parturient.
+                            Designing intuitive, user-friendly, and visually appealing interfaces to enhance user experiences. Key principles include consistency, clarity, accessibility, and flexibility, ensuring smooth interaction and adaptability across devices.
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
                             <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
@@ -60,9 +54,7 @@ function Services() {
                         </div>
                         <h3 class="font-semibold text-2xl leading-7 py-5">Front-end Development</h3>
                         <p class="font-normal text-[18px] leading-[27px]">
-                            Viverra ut potenti aliquam feugiat dui imperdiet laoreet tempus sed. Elit cursus est lorem in est id
-                            nec. Quis diam posuere at nisl eget turpis sagittis nunc. Aliquet et ultrices purus, id. Sagittis
-
+                            Building the visual and interactive elements of websites or applications that users see and engage with. It involves using technologies like HTML, CSS, and JavaScript to create responsive, accessible, and user-friendly interfaces.
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
                             <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
@@ -79,10 +71,10 @@ function Services() {
                         </div>
                         <h3 class="font-semibold text-2xl leading-7 py-5">Back-end Development</h3>
                         <p class="font-normal text-[18px] leading-[27px]">
-                            Viverra ut potenti aliquam feugiat dui imperdiet laoreet tempus sed. Elit cursus est lorem in est id
-                            nec. Quis diam posuere at nisl eget turpis sagittis nunc. Aliquet et ultrices purus, id. Sagittis
-                            erat
-
+                            Focusing on the server-side logic, databases, and APIs that power applications. 
+                            It involves managing data, ensuring functionality, and supporting the front-end 
+                            by using technologies like Node.js, Python, Go  along with databases like 
+                            PostgreSQL or MongoDB
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
                             <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
@@ -117,10 +109,9 @@ function Services() {
                         </div>
                         <h3 class="font-semibold text-2xl leading-7 py-5">Cloud Deployment</h3>
                         <p class="font-normal text-[18px] leading-[27px]">
-                            Viverra ut potenti aliquam feugiat dui imperdiet laoreet tempus sed. Elit cursus est lorem in est id
-                            nec. Quis diam posuere at nisl eget turpis sagittis nunc. Aliquet et ultrices purus, id. Sagittis
-                            erat
-                            nunc in parturient.
+                           The process of deploying applications, services, or data to cloud-based platforms. 
+                           It ensures scalability, reliability, and cost-efficiency using tools like Kubernetes, 
+                           Docker, or CI/CD pipelines, and platforms like AWS, Azure, or Google Cloud.
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
                             <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
@@ -137,9 +128,9 @@ function Services() {
                         </div>
                         <h3 class="font-semibold text-2xl leading-7 py-5">Database Management</h3>
                         <p class="font-normal text-[18px] leading-[27px]">
-                            Viverra ut potenti aliquam feugiat dui imperdiet laoreet tempus sed. Elit cursus est lorem in est id
-                            nec. Quis diam posuere at nisl eget turpis sagittis nunc. Aliquet et ultrices purus, id. Sagittis
-                            erat
+                           The practice of organizing, storing, and managing data effectively using systems 
+                           like PostgreSQL, MySQL, or MongoDB. It involves ensuring data integrity, security, 
+                           and performance while supporting seamless access and scalability for applications.
 
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
