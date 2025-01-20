@@ -15,13 +15,13 @@ function Footer() {
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Our Company</h2>
                     <ul class="text-gray-600">
                         <li class="mb-4">
-                            <a href="./about.html" class="hover:underline">About Us</a>
+                            <a href="./about" class="hover:underline">About Us</a>
                         </li>
                         <li class="mb-4">
-                            <a href="./service.html" class="hover:underline">Services</a>
+                            <a href="./services" class="hover:underline">Services</a>
                         </li>
                         <li>
-                            <a href="./contact.html" class="hover:underline">Contact Us</a>
+                            <a href="./contact" class="hover:underline">Contact Us</a>
                         </li>
                     </ul>
                 </div>
