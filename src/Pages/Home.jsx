@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Footer from '../Components/Footer';
 import Proc1 from '../Assets/proc1.webp'
+import hr from '../Assets/hr_07.webp'
 
 function Home() {
 
@@ -40,7 +41,7 @@ function Home() {
                 </div>
 
                 <div class="hidden md:block">
-                    <img src="images/hr_07.webp" alt="" />
+                    <img src={hr} alt="" />
                 </div>
             </div>
 
