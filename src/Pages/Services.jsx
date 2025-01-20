@@ -43,7 +43,7 @@ function Services() {
                             nunc in parturient.
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
-                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/Contact'> Connect Now</Link></button>
+                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
                             <button className="px-4 py-2 md:px-3 md:py-[10px] border-[#6854FC] rounded-[20px]">
                                 <HashLink smooth to="#projects" className="text-inherit no-underline">
                                     Our Works
@@ -65,7 +65,7 @@ function Services() {
 
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
-                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/Contact'> Connect Now</Link></button>
+                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
 
                         </div>
                     </div>
@@ -85,7 +85,7 @@ function Services() {
 
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
-                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/Contact'> Connect Now</Link></button>
+                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
 
                         </div>
                     </div>
@@ -103,7 +103,7 @@ function Services() {
                             and more using powerful tools like Photoshop and Illustrator to deliver high-quality, professional designs.
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
-                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/Contact'> Connect Now</Link></button>
+                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
 
                         </div>
                     </div>
@@ -123,7 +123,7 @@ function Services() {
                             nunc in parturient.
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
-                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/Contact'> Connect Now</Link></button>
+                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
 
                         </div>
                     </div>
@@ -143,7 +143,7 @@ function Services() {
 
                         </p>
                         <div class="flex gap-1 md:gap-5 items-center mt-[30px]">
-                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/Contact'> Connect Now</Link></button>
+                            <button class=" px-4 py-2 md:px-3 md:py-[10px] bg-[#6854FC] rounded-[20px]"><Link to='/contact'> Connect Now</Link></button>
 
                         </div>
                     </div>

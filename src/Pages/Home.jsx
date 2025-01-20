@@ -29,10 +29,10 @@ function Home() {
                         applications.</p>
 
                     <div class="flex gap-5 items-center mt-[50px]">
-                        <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition"> <Link to='/Contact'
+                        <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition"> <Link to='/contact'
                             onClick={() => setOpen(true)}>Connect With Us</Link></button>
                         <button class="btn btn-secondary">
-                            <HashLink smooth to='/Services#projects' >
+                            <HashLink smooth to='/services#projects' >
                                 Browse Our Works
                             </HashLink>
                         </button>

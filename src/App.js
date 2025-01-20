@@ -15,19 +15,19 @@ function App() {
         }
       />
       <Route 
-        path='/About'
+        path='/about'
         element={
           <About />
         }
       />
       <Route 
-        path='/Services'
+        path='/services'
         element={
           <Services />
         }
       />
       <Route 
-        path='/Contact'
+        path='/contact'
         element={
           <Contact />
         }

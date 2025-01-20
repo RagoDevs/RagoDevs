@@ -21,13 +21,13 @@ function Header() {
                             <Link to='/'>Home</Link>
                         </li>
                         <li>
-                            <Link to='/About'>About Us</Link>
+                            <Link to='/about'>About Us</Link>
                         </li>
                         <li>
-                        <Link to='/Services'>Services</Link>
+                        <Link to='/services'>Services</Link>
                         </li>
                         <li>
-                        <Link to='/Contact'>Contact Us</Link>
+                        <Link to='/contact'>Contact Us</Link>
                         </li>
                     </ul>
 
@@ -62,13 +62,13 @@ function Header() {
                         <Link to='/' onClick={() => setOpen(true)}>Home</Link>
                     </li>
                     <li>
-                        <Link to='/About' onClick={() => setOpen(true)}>About Us</Link>
+                        <Link to='/about' onClick={() => setOpen(true)}>About Us</Link>
                     </li >
                     <li>
-                        <Link to='/Services' onClick={() => setOpen(true)} >Service</Link>
+                        <Link to='/services' onClick={() => setOpen(true)} >Service</Link>
                     </li >
                     <li>
-                        <Link to='/Contact' onClick={() => setOpen(true)}>Contact Us</Link>
+                        <Link to='/contact' onClick={() => setOpen(true)}>Contact Us</Link>
                     </li >
                 </ul >
 
