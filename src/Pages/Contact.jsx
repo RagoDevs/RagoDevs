@@ -61,7 +61,7 @@ const Contact = () => {
 
                                 </div>
                                 <p class="font-normal text-[18px] text-white leading-7 tracking-[0.02em] ml-4">
-                                    Contact@ragodevs.com
+                                    contact@ragodevs.com
                                 </p>
                             </div>
                         </li>
