@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
@@ -9,6 +9,45 @@ const Contact = () => {
           window.scrollTo(0, 0); // Scroll to the top when the Contact component is rendered
         }, []);
         
+        const [formData, setFormData] = useState({
+            firstname: '',
+            lastname: '',
+            email: '',
+            phone: '',
+            service: '',
+            message: '',
+
+        });
+
+        const handleChange = (e) => {
+            const { name, value } = e.target;
+            setFormData((prevData) => ({
+                ...prevData, 
+                [name]: value,
+            }))
+        };
+
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+            try {
+                const response = await fetch ('', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    alert('Form submitted successfully');
+                } else {
+                    alert('Failed to submit the form');
+                }
+            } catch (error) {
+                alert('An error occured. Please try again');
+            }
+
+        };
 
     return (
         <>
@@ -83,26 +122,26 @@ const Contact = () => {
                     </ul>
                 </div>
 
-                <form class="py-8">
+                <form class="py-8" onSubmit={handleSubmit}>
                     <div class="grid gap-6 mb-6 md:grid-cols-2">
                         <div class="col-span-2 md:col-span-1">
                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">First
                                 name</label>
-                            <input type="text" id="first_name"
+                            <input type="text" id="first_name" name='firstname' value={formData.firstname} onChange={handleChange}
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="John" required />
                         </div>
                         <div class="col-span-2 md:col-span-1">
                             <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Last
                                 name</label>
-                            <input type="text" id="last_name"
+                            <input type="text" id="last_name" name='lastname' value={formData.lastname} onChange={handleChange}
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="Doe" required />
                         </div>
                         <div class="col-span-2 md:col-span-1">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email
                                 address</label>
-                            <input type="email" id="email"
+                            <input type="email" id="email" name='email' value={formData.email} onChange={handleChange}
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="john.doe@company.com" required />
                         </div>
@@ -110,45 +149,45 @@ const Contact = () => {
                         <div class="col-span-2 md:col-span-1">
                             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone
                                 number</label>
-                            <input type="tel" id="phone"
+                            <input type="tel" id="phone" name='phone' value={formData.phone} onChange={handleChange}
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="+255 712345678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                                placeholder="+255 712345678" required />
                         </div>
 
                         <div class="col-span-2">
                             <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] my-6">What service do you need?</h3>
                             <div class="grid  grid-cols-3 mb-2">
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="" name="default-radio"
+                                    <input id="default-radio-1" type="radio" value="Web Design" name="service" onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Web
                                         Design</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="" name="default-radio"
+                                    <input id="default-radio-1" type="radio" value="Database Management" name="service" onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Database Management
                                     </label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="" name="default-radio"
+                                    <input id="default-radio-1" type="radio" value="Graphics Design" name="service" onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Graphic
                                         Design</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="" name="default-radio"
+                                    <input id="default-radio-1" type="radio" value="Cloud Deploymemt" name="service" onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Cloud
                                         Deployment</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="" name="default-radio"
+                                    <input id="default-radio-1" type="radio" value="UI/UX" name="service" onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">UI/UX</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="" name="default-radio"
+                                    <input id="default-radio-1" type="radio" value="Other" name="service" onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Other</label>
                                 </div>
@@ -158,9 +197,14 @@ const Contact = () => {
 
                         <div class="col-span-2">
                             <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] mb-6">Message</h3>
-                            <textarea id="message" rows="4"
+                            <textarea id="message" rows="4" name='message' value={formData.message} onChange={handleChange}
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                                 placeholder="Write your thoughts here..."></textarea>
+                        </div>
+                        <div class="flex gap-5 items-center mt-[20px]">
+                            <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition" type='submit'>
+                                Send It
+                            </button>
                         </div>
                     </div>
                 </form>
