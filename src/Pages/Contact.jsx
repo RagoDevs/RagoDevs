@@ -10,8 +10,8 @@ const Contact = () => {
         }, []);
         
         const [formData, setFormData] = useState({
-            firstname: '',
-            lastname: '',
+            first_name: '',
+            last_name: '',
             email: '',
             phone: '',
             service: '',
@@ -30,7 +30,7 @@ const Contact = () => {
         const handleSubmit = async (e) => {
             e.preventDefault();
             try {
-                const response = await fetch ('', {
+                const response = await fetch ('https://mailer.ragodevs.com/submit-contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -127,14 +127,14 @@ const Contact = () => {
                         <div class="col-span-2 md:col-span-1">
                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">First
                                 name</label>
-                            <input type="text" id="first_name" name='firstname' value={formData.firstname} onChange={handleChange}
+                            <input type="text" id="first_name" name='first_name' value={formData.first_name} onChange={handleChange}
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="John" required />
                         </div>
                         <div class="col-span-2 md:col-span-1">
                             <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Last
                                 name</label>
-                            <input type="text" id="last_name" name='lastname' value={formData.lastname} onChange={handleChange}
+                            <input type="text" id="last_name" name='last_name' value={formData.last_name} onChange={handleChange}
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="Doe" required />
                         </div>
