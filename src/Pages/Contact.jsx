@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 const Contact = () => {
@@ -56,7 +57,7 @@ const Contact = () => {
 
     return (
         <>
-
+            <ToastContainer />
             <Header />
 
             <div class="container mx-auto text-center pt-10 ">
