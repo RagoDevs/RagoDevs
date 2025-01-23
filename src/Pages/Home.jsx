@@ -23,7 +23,6 @@ function Home() {
                     </div>
 
                     <h1 class="text-6xl leading-[70px] font-bold capitalize md:w-[411px] mt-9 mb-4 ">We craft tailored Software
-                        solutions.
                     </h1>
 
                     <p class="text-lg leading-7 md:w-[630px]">Turning client ideas into seamless, functional, <br /> and scalable

@@ -158,10 +158,22 @@ const Contact = () => {
                             <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] my-6">What service do you need?</h3>
                             <div class="grid  grid-cols-3 mb-2">
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Web Design" name="service" onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="Web App" name="service" onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Web
-                                        Design</label>
+                                        App</label>
+                                </div>
+                                <div class="flex items-center mb-4">
+                                    <input id="default-radio-1" type="radio" value="Mobile App" name="service" onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
+                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Mobile
+                                        App</label>
+                                </div>
+                                <div class="flex items-center mb-4">
+                                    <input id="default-radio-1" type="radio" value="System Development" name="service" onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
+                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">System
+                                        Development</label>
                                 </div>
                                 <div class="flex items-center mb-4">
                                     <input id="default-radio-1" type="radio" value="Database Management" name="service" onChange={handleChange}
