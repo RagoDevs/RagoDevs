@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Contact = () => {
@@ -39,9 +40,13 @@ const Contact = () => {
                 });
 
                 if (response.ok) {
-                    alert('Form submitted successfully');
+                    toast.success('Submitted successfully', {
+                        autoClose: 3000,
+                    });
                 } else {
-                    alert('Failed to submit the form');
+                    toast.error('Failed to submit the form', {
+                        autoClose: 3000,
+                    });
                 }
             } catch (error) {
                 alert('An error occured. Please try again');
