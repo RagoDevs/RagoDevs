@@ -3,57 +3,67 @@ import { useEffect } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import 'react-toastify/dist/ReactToastify.css';
+import './../Components/Contact.css'
 import { ToastContainer, toast } from 'react-toastify';
 
 
-const Contact = () => {
-        useEffect(() => {
-          window.scrollTo(0, 0); // Scroll to the top when the Contact component is rendered
-        }, []);
-        
-        const [formData, setFormData] = useState({
-            first_name: '',
-            last_name: '',
-            email: '',
-            phone: '',
-            service: '',
-            message: '',
+export default function Contact () {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [ selected, setSelected ] = useState(null);
+    useEffect(() => {
+        window.scrollTo(0, 0); 
+    }, []);
 
-        });
+    const intialState = {
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
+    }
 
-        const handleChange = (e) => {
-            const { name, value } = e.target;
-            setFormData((prevData) => ({
-                ...prevData, 
-                [name]: value,
-            }))
-        };
+    const [formData, setFormData] = useState(intialState)
+   
 
-        const handleSubmit = async (e) => {
-            e.preventDefault();
-            try {
-                const response = await fetch ('https://mailer.ragodevs.com/submit-contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+        setSelected(value);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        try {
+            const response = await fetch('https://mailer.ragodevs.com/submit-contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                toast.success('Submitted successfully', {
+                    autoClose: 3000,
                 });
-
-                if (response.ok) {
-                    toast.success('Submitted successfully', {
-                        autoClose: 3000,
-                    });
-                } else {
-                    toast.error('Failed to submit the form', {
-                        autoClose: 3000,
-                    });
-                }
-            } catch (error) {
-                alert('An error occured. Please try again');
+                setFormData(intialState)
+            } else {
+                toast.error('Failed to submit the form', {
+                    autoClose: 3000,
+                });
             }
+        } catch (error) {
+            alert('An error occured. Please try again');
+        } finally {
+            setIsSubmitting(false)
+        }
 
-        };
+    };
 
     return (
         <>
@@ -164,48 +174,48 @@ const Contact = () => {
                             <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] my-6">What service do you need?</h3>
                             <div class="grid  grid-cols-3 mb-2">
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Web App" name="service" onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="Web App" name="service" checked={selected === "Web App"}  onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Web
                                         App</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Mobile App" name="service" onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="Mobile App" name="service" checked={selected === "Mobile App"} onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Mobile
                                         App</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="System Development" name="service" onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="System Development" name="service" checked={selected === "System Development"}  onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">System
                                         Development</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Database Management" name="service" onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="Database Management" name="service" checked={selected === "Database Management"} onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Database Management
                                     </label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Graphics Design" name="service" onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="Graphics Design" name="service" checked={selected === "Graphic Design"} onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Graphic
                                         Design</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Cloud Deploymemt" name="service" onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="Cloud Deploymemt" name="service" checked={selected === "Cloud Deployments"} onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Cloud
                                         Deployment</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="UI/UX" name="service" onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="UI/UX" name="service" checked={selected === "UI/UX"} onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">UI/UX</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Other" name="service" onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="Other" name="service" checked={selected === "Other"} onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Other</label>
                                 </div>
@@ -220,19 +230,21 @@ const Contact = () => {
                                 placeholder="Write your thoughts here..."></textarea>
                         </div>
                         <div class="flex gap-5 items-center mt-[20px]">
-                            <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition" type='submit'>
-                                Send It
+                            <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition 
+                            disabled:bg-gray-500 disabled:cursor-not-allowed"
+                                type='submit' 
+                                disabled={isSubmitting}>
+                                {isSubmitting ? 'Sending...' : 'Sent It'}
                             </button>
                         </div>
                     </div>
                 </form>
             </div>
-        
+
 
             <Footer />
-        
+
         </>
     )
 }
 
-export default Contact
