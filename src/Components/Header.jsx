@@ -80,6 +80,17 @@ function Header() {
                                 <Link to='/services' onClick={() => setOpen(true)} >Service</Link>
                             </li >
                             <li>
+                            <HashLink
+                                smooth
+                                to="/services#projects"
+                                scroll={(el) =>
+                                    el.scrollIntoView({ behavior: 'smooth', duration: 1500 })
+                                }
+                            >
+                                Our Works
+                            </HashLink>
+                        </li>
+                            <li>
                                 <Link to='/contact' onClick={() => setOpen(true)}>Contact Us</Link>
                             </li >
                         </ul >
