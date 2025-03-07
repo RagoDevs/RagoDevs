@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import 'react-toastify/dist/ReactToastify.css';
-import './../Components/Contact.css'
 import { ToastContainer, toast } from 'react-toastify';
 
 
