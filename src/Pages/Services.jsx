@@ -149,7 +149,7 @@ function Services() {
                     {/* Project 1 */}
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                         <div class="relative w-full h-64">
-                            <img style={{ height: '15rem', objectFit: 'cover' }} src={hr} alt="Project 1" class="w-full h-64 object-cover rounded-lg" />
+                            <img style={{ height: '15rem', objectFit: 'cover' }} src={hr} alt="Project 1" class="w-full h-64 object-cover rounded-lg" loading="lazy"/>
                         </div>
                         <div class="p-10" >
                             <h3 class="font-semibold text-xl mb-3">Human Resoure Management System</h3>
@@ -160,7 +160,7 @@ function Services() {
 
                     {/* Project 2 */}
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img style={{ height: '15rem', objectFit: 'cover' }} src={stats} alt="Project 2" class="w-full h-64 " />
+                        <img style={{ height: '15rem', objectFit: 'cover' }} src={stats} alt="Project 2" class="w-full h-64 " loading="lazy"/>
                         <div class="p-10">
                             <h3 class="font-semibold text-xl mb-3">Chess Score Tracker</h3>
                             <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
@@ -170,7 +170,7 @@ function Services() {
 
                     {/* Project 3 */}
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img style={{ height: '15rem', objectFit: 'cover' }} src={queue} alt="Project 3" class="w-full h-64 object-cover" />
+                        <img style={{ height: '15rem', objectFit: 'cover' }} src={queue} alt="Project 3" class="w-full h-64 object-cover" loading="lazy"/>
                         <div class="p-10">
                             <h3 class="font-semibold text-xl mb-3">Queueing System</h3>
                             <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
@@ -180,7 +180,7 @@ function Services() {
 
                     {/* Project 4 */}
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img style={{ height: '15rem', objectFit: 'cover' }} src={game} alt="Project 3" class="w-full h-64 object-cover" />
+                        <img style={{ height: '15rem', objectFit: 'cover' }} src={game} alt="Project 3" class="w-full h-64 object-cover" loading="lazy"/>
                         <div class="p-10">
                             <h3 class="font-semibold text-xl mb-3">Chess Game</h3>
                             <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
