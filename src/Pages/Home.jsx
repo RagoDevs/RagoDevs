@@ -40,7 +40,7 @@ function Home() {
                 </div>
 
                 <div class="hidden md:block">
-                    <img src={hr} alt="" />
+                    <img src={hr} alt="" loading="lazy"/>
                 </div>
             </div>
 
@@ -154,7 +154,7 @@ function Home() {
             <div class="mx-[6%] px-4 my-32 lg:px-20 lg:mt-32 md:grid grid-cols-[1fr,2fr] ">
                 <div class="rounded-lg bg-slate-400">
                     <img style={{ height: '800px', objectFit: 'cover', filter: 'grayscale(1)' }} class="rounded-lg "
-                        src={Proc1} alt="" srcset="" />
+                        src={Proc1} alt="" srcset="" loading="lazy"/>
                 </div>
 
                 <div class="mt-20 md:mt-0 md:ml-16">
