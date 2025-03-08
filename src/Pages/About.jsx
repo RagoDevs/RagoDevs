@@ -51,7 +51,7 @@ function About() {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-y-20 mt-14">
                     <div class="flex flex-col items-center">
                         <div class="w-[180px] h-[180px] rounded-full bg-blue-200">
-                            <img src={lug} alt="lug" style={{ borderRadius: '80px' }} />
+                            <img src={lug} alt="lug" loading="lazy" style={{ borderRadius: '80px' }} />
                         </div>
                         <h4 class="font-semibold text-[24px] text-center leading-7 mb-1 mt-5">Lugano Abel</h4>
                         <p class="font-normal text-[18px] leading-7 text-center">Full-stack Developer </p>
@@ -59,7 +59,7 @@ function About() {
 
                     <div class="flex flex-col items-center">
                         <div class="w-[180px] h-[180px] rounded-full bg-blue-200">
-                            <img src={jerry} alt="jerry" style={{ borderRadius: '80px' }} />
+                            <img src={jerry} alt="jerry" loading="lazy" style={{ borderRadius: '80px' }} />
                         </div>
                         <h4 class="font-semibold text-[24px] text-center leading-7 mb-1 mt-5">Jerry Swigo</h4>
                         <p class="font-normal text-[18px] leading-7 text-center">Front-end Developer</p>
