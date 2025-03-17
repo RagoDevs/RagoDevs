@@ -153,7 +153,7 @@ function Services() {
                         </div>
                         <div class="p-10" >
                             <h3 class="font-semibold text-xl mb-3">Human Resoure Management System</h3>
-                            <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
+                            <p class="text-gray-700 mb-4">A comprehensive HR solution designed to streamline employee management, payroll, and recruitment. It simplifies administrative tasks, enhances efficiency, and ensures seamless workforce management.</p>
                             <a href="https://hr.ragodevs.com/" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
                         </div>
                     </div>
@@ -162,8 +162,8 @@ function Services() {
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img style={{ height: '15rem', objectFit: 'cover' }} src={stats} alt="Project 2" class="w-full h-64 " loading="lazy"/>
                         <div class="p-10">
-                            <h3 class="font-semibold text-xl mb-3">Chess Score Tracker</h3>
-                            <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
+                            <h3 class="font-semibold text-xl mb-3">Swahili Chess Community</h3>
+                            <p class="text-gray-700 mb-4">A Community platform dedicated to connecting and promoting chess among Tanzania swahili-speaking players. It fosters learning, competition, and community engagement through events, discussions, and resources.</p>
                             <a href="https://chess.tz" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ function Services() {
                         <img style={{ height: '15rem', objectFit: 'cover' }} src={queue} alt="Project 3" class="w-full h-64 object-cover" loading="lazy"/>
                         <div class="p-10">
                             <h3 class="font-semibold text-xl mb-3">Queueing System</h3>
-                            <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
+                            <p class="text-gray-700 mb-4">An efficient solution for managing customer or task queues, reducing wait times, and optimizing service flow. It enhances organization, improves user experience, and ensures a seamless queuing process.</p>
                             <a onClick={() => setOpen(false)} href="https://qeasy.ragodevs.com/" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
                         </div>
                     </div>
@@ -183,7 +183,7 @@ function Services() {
                         <img style={{ height: '15rem', objectFit: 'cover' }} src={game} alt="Project 3" class="w-full h-64 object-cover" loading="lazy"/>
                         <div class="p-10">
                             <h3 class="font-semibold text-xl mb-3">Chess Game</h3>
-                            <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
+                            <p class="text-gray-700 mb-4">An interactive and strategic chess platform designed for Tanzanian players of all levels. It features real-time gameplay an intuitive interface, enhancing the chess experience while improving strategic thinking.</p>
                             <a href="https://play.chess.tz" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
                         </div>
                     </div>
