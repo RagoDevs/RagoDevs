@@ -10,7 +10,7 @@ import queue from '../Assets/queue.webp'
 import game from '../Assets/game.jpg'
 
 function Services() {
-    const [open, setOpen] = useState(false);
+    const [, setOpen] = useState(false);
     return (
         <>
 
@@ -154,7 +154,7 @@ function Services() {
                         <div class="p-10" >
                             <h3 class="font-semibold text-xl mb-3">Human Resoure Management System</h3>
                             <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
-                            <a href="https://hr.ragodevs.com/" target="_blank" class="text-blue-500 hover:text-blue-700">Visit Site</a>
+                            <a href="https://hr.ragodevs.com/" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
                         </div>
                     </div>
 
@@ -164,7 +164,7 @@ function Services() {
                         <div class="p-10">
                             <h3 class="font-semibold text-xl mb-3">Chess Score Tracker</h3>
                             <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
-                            <a href="https://prodigies.chess.tz" target="_blank" class="text-blue-500 hover:text-blue-700">Visit Site</a>
+                            <a href="https://prodigies.chess.tz" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
                         </div>
                     </div>
 
@@ -174,7 +174,7 @@ function Services() {
                         <div class="p-10">
                             <h3 class="font-semibold text-xl mb-3">Queueing System</h3>
                             <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
-                            <a onClick={() => setOpen(false)} href="https://qeasy.ragodevs.com/" target="_blank" class="text-blue-500 hover:text-blue-700">Visit Site</a>
+                            <a onClick={() => setOpen(false)} href="https://qeasy.ragodevs.com/" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
                         </div>
                     </div>
 
@@ -184,7 +184,7 @@ function Services() {
                         <div class="p-10">
                             <h3 class="font-semibold text-xl mb-3">Chess Game</h3>
                             <p class="text-gray-700 mb-4">Short description of the project, showcasing the key features or challenges solved.</p>
-                            <a href="https://chess.tz" target="_blank" class="text-blue-500 hover:text-blue-700">Visit Site</a>
+                            <a href="https://chess.tz" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
                         </div>
                     </div>
 
