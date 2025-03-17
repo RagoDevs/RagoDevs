@@ -8,7 +8,7 @@ import lug from '../Assets/lug.jpeg'
 import jerry from '../Assets/jerry.jpeg'
 
 function About() {
-    const [open, setOpen] = useState(false);
+    const [, setOpen] = useState(false);
     return (
         <>
             <Header />
