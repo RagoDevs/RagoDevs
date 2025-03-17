@@ -9,7 +9,7 @@ import hr from '../Assets/hr_07.webp'
 
 function Home() {
 
-    const [open, setOpen] = useState(false);
+    const [, setOpen] = useState(false);
     return (
         <>
             <Header />
