@@ -35,7 +35,7 @@ function Header() {
                                     el.scrollIntoView({ behavior: 'smooth', duration: 1500 })
                                 }
                             >
-                                Our Works
+                                Our Projects
                             </HashLink>
                         </li>
                         <li>
