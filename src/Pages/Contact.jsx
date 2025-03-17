@@ -197,13 +197,13 @@ export default function Contact () {
                                     </label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Graphics Design" name="service" checked={selected === "Graphic Design"} onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="Graphics Design" name="service" checked={selected === "Graphics Design"} onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Graphic
                                         Design</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Cloud Deploymemt" name="service" checked={selected === "Cloud Deployments"} onChange={handleChange}
+                                    <input id="default-radio-1" type="radio" value="Cloud Deployment" name="service" checked={selected === "Cloud Deployment"} onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
                                     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Cloud
                                         Deployment</label>
