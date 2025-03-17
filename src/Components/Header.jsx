@@ -57,7 +57,7 @@ function Header() {
                         }`}
                     >
                         <div class="flex justify-between pt-8">
-                            <a href="#" aria-label="Devs Logo" class="font-roboto font-bold text-[0px]">
+                            <a href="/" aria-label="Devs Logo" class="font-roboto font-bold text-[0px]">
                                 <span class="text-yellow text-xl">Rago</span>
                                 <span class="text-xl">Devs</span>
                             </a>
