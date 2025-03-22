@@ -8,6 +8,7 @@ import hr from '../Assets/hr.jpg'
 import stats from '../Assets/stats.jpg'
 import queue from '../Assets/queue.webp'
 import game from '../Assets/game.jpg'
+import rent from '../Assets/rent1.svg'
 
 function Services() {
     const [, setOpen] = useState(false);
@@ -185,6 +186,16 @@ function Services() {
                             <h3 class="font-semibold text-xl mb-3">Chess Game</h3>
                             <p class="text-gray-700 mb-4">An interactive and strategic chess platform designed for Tanzanian players of all levels. It features real-time gameplay an intuitive interface, enhancing the chess experience while improving strategic thinking.</p>
                             <a href="https://play.chess.tz" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
+                        </div>
+                    </div>
+
+                       {/* Project 6 */}
+                       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img style={{ height: '15rem', objectFit: 'cover' }} src={rent} alt="Project 3" class="w-full h-64 object-cover" loading="lazy"/>
+                        <div class="p-10">
+                            <h3 class="font-semibold text-xl mb-3">Rent Management System</h3>
+                            <p class="text-gray-700 mb-4">An interactive and efficient system designed for Tanzanian property owners and tenants. It features an intuitive interface, and streamlined processes, enhancing the rental experience while improving management.</p>
+                            <a href="https://rent.ragodevs.com" target="_blank" class="text-blue-500 hover:text-blue-700" rel="noreferrer">Visit Site</a>
                         </div>
                     </div>
 
