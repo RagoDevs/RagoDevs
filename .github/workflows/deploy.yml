@@ -10,24 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Step 2: Install sshpass
-      - name: Install sshpass
-        run: sudo apt-get update && sudo apt-get install -y sshpass
-
-      # Step 3: Copy files to the server
-      - name: Copy Files to Server
-        env:
-          SSH_USERNAME: ${{ secrets.USERNAME }}
-          SSH_PASSWORD: ${{ secrets.PASSWORD }}
-          SERVER_HOST: ${{ secrets.HOST }}
-        run: |
-          sshpass -p "$SSH_PASSWORD" rsync -avz --delete -e "ssh -p 22 -o StrictHostKeyChecking=no" ./ "$SSH_USERNAME@$SERVER_HOST:/var/www/ragodevs"
-
-      # Step 4: Run build commands on the server
       - name: Run Build Commands on Server
         uses: appleboy/ssh-action@master
         with:
@@ -40,6 +25,8 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
             cd /var/www/ragodevs
+
+            git pull
             npm install
             npm run build:css
             npm run build
