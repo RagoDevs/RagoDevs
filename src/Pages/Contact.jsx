@@ -251,7 +251,7 @@ export default function Contact () {
                             disabled:bg-gray-500 disabled:cursor-not-allowed"
                                 type='submit' 
                                 disabled={isSubmitting}>
-                                {isSubmitting ? 'Sending...' : 'Sent It'}
+                                {isSubmitting ? 'Sending...' : 'Send'}
                             </button>
                         </div>
                     </div>
