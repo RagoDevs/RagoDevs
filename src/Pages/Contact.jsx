@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 export default function Contact () {
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [ selected, setSelected ] = useState(null);
+    const [ selectedServices, setSelectedServices ] = useState([]);
     useEffect(() => {
         window.scrollTo(0, 0); 
     }, []);
@@ -26,12 +26,30 @@ export default function Contact () {
    
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-        setSelected(value);
+        const { name, value, type, checked } = e.target;
+        
+        if (type === 'checkbox' && name === 'service') {
+            if (checked) {
+                const updatedServices = [...selectedServices, value];
+                setSelectedServices(updatedServices);
+                setFormData(prevData => ({
+                    ...prevData,
+                    service: updatedServices.join(', ')
+                }));
+            } else {
+                const updatedServices = selectedServices.filter(service => service !== value);
+                setSelectedServices(updatedServices);
+                setFormData(prevData => ({
+                    ...prevData,
+                    service: updatedServices.join(', ')
+                }));
+            }
+        } else {
+            setFormData((prevData) => ({
+                ...prevData,
+                [name]: value,
+            }));
+        }
     };
 
     const handleSubmit = async (e) => {
@@ -173,50 +191,50 @@ export default function Contact () {
                             <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] my-6">What service do you need?</h3>
                             <div class="grid  grid-cols-3 mb-2">
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Web App" name="service" checked={selected === "Web App"}  onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
-                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Web
+                                    <input id="checkbox-web-app" type="checkbox" value="Web App" name="service" checked={selectedServices.includes("Web App")}  onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label for="checkbox-web-app" class="ml-2 text-sm font-medium text-gray-900">Web
                                         App</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Mobile App" name="service" checked={selected === "Mobile App"} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
-                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Mobile
+                                    <input id="checkbox-mobile-app" type="checkbox" value="Mobile App" name="service" checked={selectedServices.includes("Mobile App")} onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label for="checkbox-mobile-app" class="ml-2 text-sm font-medium text-gray-900">Mobile
                                         App</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="System Development" name="service" checked={selected === "System Development"}  onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
-                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">System
+                                    <input id="checkbox-system-dev" type="checkbox" value="System Development" name="service" checked={selectedServices.includes("System Development")}  onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label for="checkbox-system-dev" class="ml-2 text-sm font-medium text-gray-900">System
                                         Development</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Database Management" name="service" checked={selected === "Database Management"} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
-                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Database Management
+                                    <input id="checkbox-db-mgmt" type="checkbox" value="Database Management" name="service" checked={selectedServices.includes("Database Management")} onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label for="checkbox-db-mgmt" class="ml-2 text-sm font-medium text-gray-900">Database Management
                                     </label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Graphics Design" name="service" checked={selected === "Graphics Design"} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
-                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Graphic
+                                    <input id="checkbox-graphic-design" type="checkbox" value="Graphics Design" name="service" checked={selectedServices.includes("Graphics Design")} onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label for="checkbox-graphic-design" class="ml-2 text-sm font-medium text-gray-900">Graphic
                                         Design</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Cloud Deployment" name="service" checked={selected === "Cloud Deployment"} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
-                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Cloud
+                                    <input id="checkbox-cloud-deploy" type="checkbox" value="Cloud Deployment" name="service" checked={selectedServices.includes("Cloud Deployment")} onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label for="checkbox-cloud-deploy" class="ml-2 text-sm font-medium text-gray-900">Cloud
                                         Deployment</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="UI/UX" name="service" checked={selected === "UI/UX"} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
-                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">UI/UX</label>
+                                    <input id="checkbox-uiux" type="checkbox" value="UI/UX" name="service" checked={selectedServices.includes("UI/UX")} onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label for="checkbox-uiux" class="ml-2 text-sm font-medium text-gray-900">UI/UX</label>
                                 </div>
                                 <div class="flex items-center mb-4">
-                                    <input id="default-radio-1" type="radio" value="Other" name="service" checked={selected === "Other"} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
-                                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Other</label>
+                                    <input id="checkbox-other" type="checkbox" value="Other" name="service" checked={selectedServices.includes("Other")} onChange={handleChange}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label for="checkbox-other" class="ml-2 text-sm font-medium text-gray-900">Other</label>
                                 </div>
                             </div>
 
