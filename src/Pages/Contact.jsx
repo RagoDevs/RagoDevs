@@ -8,7 +8,9 @@ import { ToastContainer, toast } from 'react-toastify';
 
 export default function Contact () {
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [ selectedServices, setSelectedServices ] = useState([]);
+    const [selectedServices, setSelectedServices] = useState([]);
+    const [formErrors, setFormErrors] = useState({});
+    const [formTouched, setFormTouched] = useState({});
     useEffect(() => {
         window.scrollTo(0, 0); 
     }, []);
@@ -25,35 +27,131 @@ export default function Contact () {
     const [formData, setFormData] = useState(intialState)
    
 
+    // Mark field as touched when user interacts with it
+    const handleBlur = (e) => {
+        const { name } = e.target;
+        setFormTouched(prev => ({
+            ...prev,
+            [name]: true
+        }));
+        validateField(name, formData[name]);
+    };
+
+    // Validate a single field
+    const validateField = (name, value) => {
+        let errors = {...formErrors};
+        
+        if (name === 'service') {
+            if (!value || value.trim() === '') {
+                errors.service = 'Please select at least one service';
+            } else {
+                delete errors.service;
+            }
+        } else if (!value || value.trim() === '') {
+            errors[name] = `${name.replace('_', ' ').replace(/^\w/, c => c.toUpperCase())} is required`;
+        } else if (name === 'email' && !/\S+@\S+\.\S+/.test(value)) {
+            errors.email = 'Please enter a valid email address';
+        } else if (name === 'phone' && !/^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{1,9}$/.test(value)) {
+            errors.phone = 'Please enter a valid phone number';
+        } else {
+            delete errors[name];
+        }
+        
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
+
+    // Validate all fields
+    const validateForm = () => {
+        const errors = {};
+        const { first_name, last_name, email, phone, service, message } = formData;
+        
+        if (!first_name || first_name.trim() === '') errors.first_name = 'First name is required';
+        if (!last_name || last_name.trim() === '') errors.last_name = 'Last name is required';
+        if (!email || email.trim() === '') {
+            errors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            errors.email = 'Please enter a valid email address';
+        }
+        if (!phone || phone.trim() === '') {
+            errors.phone = 'Phone number is required';
+        } else if (!/^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{1,9}$/.test(phone)) {
+            errors.phone = 'Please enter a valid phone number';
+        }
+        if (!service || service.trim() === '') errors.service = 'Please select at least one service';
+        if (!message || message.trim() === '') errors.message = 'Message is required';
+        
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
+
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         
         if (type === 'checkbox' && name === 'service') {
+            let updatedServices;
             if (checked) {
-                const updatedServices = [...selectedServices, value];
+                updatedServices = [...selectedServices, value];
                 setSelectedServices(updatedServices);
+                const serviceValue = updatedServices.join(', ');
                 setFormData(prevData => ({
                     ...prevData,
-                    service: updatedServices.join(', ')
+                    service: serviceValue
                 }));
+                validateField('service', serviceValue);
             } else {
-                const updatedServices = selectedServices.filter(service => service !== value);
+                updatedServices = selectedServices.filter(service => service !== value);
                 setSelectedServices(updatedServices);
+                const serviceValue = updatedServices.join(', ');
                 setFormData(prevData => ({
                     ...prevData,
-                    service: updatedServices.join(', ')
+                    service: serviceValue
                 }));
+                validateField('service', serviceValue);
             }
+            
+            // Mark service field as touched
+            setFormTouched(prev => ({
+                ...prev,
+                service: true
+            }));
         } else {
             setFormData((prevData) => ({
                 ...prevData,
                 [name]: value,
             }));
+            
+            // Mark the field as touched
+            setFormTouched(prev => ({
+                ...prev,
+                [name]: true
+            }));
+            
+            // Validate the field if it's already been touched
+            if (formTouched[name]) {
+                validateField(name, value);
+            }
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        // Mark all fields as touched
+        const allTouched = {};
+        Object.keys(formData).forEach(key => {
+            allTouched[key] = true;
+        });
+        setFormTouched(allTouched);
+        
+        // Validate all fields before submission
+        if (!validateForm()) {
+            toast.error('Please fill all required fields correctly', {
+                autoClose: 3000,
+            });
+            return;
+        }
+        
         setIsSubmitting(true);
         try {
             const response = await fetch('https://mailer.ragodevs.com/submit-contact', {
@@ -68,18 +166,22 @@ export default function Contact () {
                 toast.success('Submitted successfully', {
                     autoClose: 3000,
                 });
-                setFormData(intialState)
+                setFormData(intialState);
+                setSelectedServices([]);
+                setFormErrors({});
+                setFormTouched({});
             } else {
                 toast.error('Failed to submit the form', {
                     autoClose: 3000,
                 });
             }
         } catch (error) {
-            alert('An error occured. Please try again');
+            toast.error('An error occurred. Please try again', {
+                autoClose: 3000,
+            });
         } finally {
-            setIsSubmitting(false)
+            setIsSubmitting(false);
         }
-
     };
 
     return (
@@ -160,36 +262,79 @@ export default function Contact () {
                         <div class="col-span-2 md:col-span-1">
                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">First
                                 name</label>
-                            <input type="text" id="first_name" name='first_name' value={formData.first_name} onChange={handleChange}
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="John" required />
+                            <input 
+                                type="text" 
+                                id="first_name" 
+                                name='first_name' 
+                                value={formData.first_name} 
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                class={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.first_name && formErrors.first_name ? 'border-red-500' : 'border-gray-300'}`}
+                                placeholder="John" 
+                            />
+                            {formTouched.first_name && formErrors.first_name && (
+                                <p className="mt-1 text-sm font-bold text-red-600">{formErrors.first_name}</p>
+                            )}
                         </div>
                         <div class="col-span-2 md:col-span-1">
                             <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Last
                                 name</label>
-                            <input type="text" id="last_name" name='last_name' value={formData.last_name} onChange={handleChange}
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="Doe" required />
+                            <input 
+                                type="text" 
+                                id="last_name" 
+                                name='last_name' 
+                                value={formData.last_name} 
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                class={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.last_name && formErrors.last_name ? 'border-red-500' : 'border-gray-300'}`}
+                                placeholder="Doe" 
+                            />
+                            {formTouched.last_name && formErrors.last_name && (
+                                <p className="mt-1 text-sm font-bold text-red-600">{formErrors.last_name}</p>
+                            )}
                         </div>
                         <div class="col-span-2 md:col-span-1">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email
                                 address</label>
-                            <input type="email" id="email" name='email' value={formData.email} onChange={handleChange}
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="john.doe@company.com" required />
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name='email' 
+                                value={formData.email} 
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                class={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.email && formErrors.email ? 'border-red-500' : 'border-gray-300'}`}
+                                placeholder="john.doe@company.com" 
+                            />
+                            {formTouched.email && formErrors.email && (
+                                <p className="mt-1 text-sm font-bold text-red-600">{formErrors.email}</p>
+                            )}
                         </div>
 
                         <div class="col-span-2 md:col-span-1">
                             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone
                                 number</label>
-                            <input type="tel" id="phone" name='phone' value={formData.phone} onChange={handleChange}
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="+255 712345678" required />
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name='phone' 
+                                value={formData.phone} 
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                class={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.phone && formErrors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                                placeholder="+255 712345678" 
+                            />
+                            {formTouched.phone && formErrors.phone && (
+                                <p className="mt-1 text-sm font-bold text-red-600">{formErrors.phone}</p>
+                            )}
                         </div>
 
                         <div class="col-span-2">
-                            <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] my-6">What service do you need?</h3>
-                            <div class="grid  grid-cols-3 mb-2">
+                            <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] mt-6 mb-2">What service do you need?</h3>
+                            {formTouched.service && formErrors.service && (
+                                <p className="mb-4 text-sm font-bold text-red-600">{formErrors.service}</p>
+                            )}
+                            <div class="grid grid-cols-3 mb-2">
                                 <div class="flex items-center mb-4">
                                     <input id="checkbox-web-app" type="checkbox" value="Web App" name="service" checked={selectedServices.includes("Web App")}  onChange={handleChange}
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
@@ -241,14 +386,25 @@ export default function Contact () {
                         </div>
 
                         <div class="col-span-2">
-                            <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] mb-6">Message</h3>
-                            <textarea id="message" rows="4" name='message' value={formData.message} onChange={handleChange}
-                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
-                                placeholder="Write your thoughts here..."></textarea>
+                            <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] mb-2">Message</h3>
+                            <textarea 
+                                id="message" 
+                                rows="4" 
+                                name='message' 
+                                value={formData.message} 
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                class={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border focus:ring-blue-500 focus:border-blue-500 ${formTouched.message && formErrors.message ? 'border-red-500' : 'border-gray-300'}`}
+                                placeholder="Write your thoughts here..."
+                            ></textarea>
+                            {formTouched.message && formErrors.message && (
+                                <p className="mt-1 text-sm font-bold text-red-600">{formErrors.message}</p>
+                            )}
                         </div>
                         <div class="flex gap-5 items-center mt-[20px]">
-                            <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition 
-                            disabled:bg-gray-500 disabled:cursor-not-allowed"
+                            <button 
+                                class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition 
+                                disabled:bg-gray-500 disabled:cursor-not-allowed"
                                 type='submit' 
                                 disabled={isSubmitting}>
                                 {isSubmitting ? 'Sending...' : 'Send'}
