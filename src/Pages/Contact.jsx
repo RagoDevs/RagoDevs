@@ -189,44 +189,44 @@ export default function Contact () {
             <ToastContainer />
             <Header />
 
-            <div class="container mx-auto text-center pt-10 ">
-                <h1 class="font-bold text-[48px] leading-[58px] capitalize pb-3">
+            <div className="container mx-auto text-center pt-10 ">
+                <h1 className="font-bold text-[48px] leading-[58px] capitalize pb-3">
                     Contact us
                 </h1>
-                <p class="font-normal text-[18px] leading-7 text-center">
+                <p className="font-normal text-[18px] leading-7 text-center">
                     Contact us to bring your ideas to life.
                 </p>
             </div>
 
-            <div class="container mx-auto px-4 lg:px-20 grid gap-12 grid-cols-1 md:grid-cols-2 my-20">
-                <div class="bg-[#6854FC] pt-9 px-7 lg:px-14 rounded-2xl ">
-                    <h3 class="font-bold text-2xl text-white leading-9 tracking-[0.02em]">
+            <div className="container mx-auto px-4 lg:px-20 grid gap-12 grid-cols-1 md:grid-cols-2 my-20">
+                <div className="bg-[#6854FC] pt-9 px-7 lg:px-14 rounded-2xl ">
+                    <h3 className="font-bold text-2xl text-white leading-9 tracking-[0.02em]">
                         Contact Information
                     </h3>
-                    <p class="font-normal text-[#FFFFFF99] text-[18px] leading-7 tracking-[0.02em] my-[6px] ">
+                    <p className="font-normal text-[#FFFFFF99] text-[18px] leading-7 tracking-[0.02em] my-[6px] ">
                         Fill up the form and our Team will get back to you within 24 hours.
                     </p>
 
                     <ul>
-                        <li class="my-[30px]">
-                            <div class="flex">
-                                <div class="relative bg-white w-8 h-8 rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" class="absolute top-1 right-1 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
+                        <li className="my-[30px]">
+                            <div className="flex">
+                                <div className="relative bg-white w-8 h-8 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
+                                        stroke="currentColor" className="absolute top-1 right-1 w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round"
                                             d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
                                     </svg>
                                 </div>
-                                <p class="font-normal text-[18px] text-white leading-7 tracking-[0.02em] ml-4">
+                                <p className="font-normal text-[18px] text-white leading-7 tracking-[0.02em] ml-4">
                                     +255 712345678
                                 </p>
                             </div>
                         </li>
-                        <li class="mb-[30px]">
-                            <div class="flex">
-                                <div class="relative bg-white w-8 h-8 rounded-full">
+                        <li className="mb-[30px]">
+                            <div className="flex">
+                                <div className="relative bg-white w-8 h-8 rounded-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                        class="absolute top-1 right-1 w-6 h-6">
+                                        className="absolute top-1 right-1 w-6 h-6">
                                         <path
                                             d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                                         <path
@@ -234,22 +234,22 @@ export default function Contact () {
                                     </svg>
 
                                 </div>
-                                <p class="font-normal text-[18px] text-white leading-7 tracking-[0.02em] ml-4">
+                                <p className="font-normal text-[18px] text-white leading-7 tracking-[0.02em] ml-4">
                                     contact@ragodevs.com
                                 </p>
                             </div>
                         </li>
-                        <li class="mb-[30px]">
-                            <div class="flex">
-                                <div class="relative bg-white w-8 h-8 rounded-full">
+                        <li className="mb-[30px]">
+                            <div className="flex">
+                                <div className="relative bg-white w-8 h-8 rounded-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                        class="absolute top-1 right-1 w-6 h-6">
-                                        <path fill-rule="evenodd"
+                                        className="absolute top-1 right-1 w-6 h-6">
+                                        <path fillRule="evenodd"
                                             d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                                            clip-rule="evenodd" />
+                                            clipRule="evenodd" />
                                     </svg>
                                 </div>
-                                <p class="font-normal text-[18px] text-white leading-7 tracking-[0.02em] ml-4">
+                                <p className="font-normal text-[18px] text-white leading-7 tracking-[0.02em] ml-4">
                                     Tanzania
                                 </p>
                             </div>
@@ -257,10 +257,10 @@ export default function Contact () {
                     </ul>
                 </div>
 
-                <form class="py-8" onSubmit={handleSubmit}>
-                    <div class="grid gap-6 mb-6 md:grid-cols-2">
-                        <div class="col-span-2 md:col-span-1">
-                            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">First
+                <form className="py-8" onSubmit={handleSubmit}>
+                    <div className="grid gap-6 mb-6 md:grid-cols-2">
+                        <div className="col-span-2 md:col-span-1">
+                            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900">First
                                 name</label>
                             <input 
                                 type="text" 
@@ -269,15 +269,15 @@ export default function Contact () {
                                 value={formData.first_name} 
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                class={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.first_name && formErrors.first_name ? 'border-red-500' : 'border-gray-300'}`}
+                                className={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.first_name && formErrors.first_name ? 'border-red-500' : 'border-gray-300'}`}
                                 placeholder="John" 
                             />
                             {formTouched.first_name && formErrors.first_name && (
                                 <p className="mt-1 text-sm font-bold text-red-600">{formErrors.first_name}</p>
                             )}
                         </div>
-                        <div class="col-span-2 md:col-span-1">
-                            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Last
+                        <div className="col-span-2 md:col-span-1">
+                            <label htmlFor="last_name" className="block mb-2 text-sm font-medium text-gray-900">Last
                                 name</label>
                             <input 
                                 type="text" 
@@ -286,15 +286,15 @@ export default function Contact () {
                                 value={formData.last_name} 
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                class={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.last_name && formErrors.last_name ? 'border-red-500' : 'border-gray-300'}`}
+                                className={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.last_name && formErrors.last_name ? 'border-red-500' : 'border-gray-300'}`}
                                 placeholder="Doe" 
                             />
                             {formTouched.last_name && formErrors.last_name && (
                                 <p className="mt-1 text-sm font-bold text-red-600">{formErrors.last_name}</p>
                             )}
                         </div>
-                        <div class="col-span-2 md:col-span-1">
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email
+                        <div className="col-span-2 md:col-span-1">
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Email
                                 address</label>
                             <input 
                                 type="email" 
@@ -303,7 +303,7 @@ export default function Contact () {
                                 value={formData.email} 
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                class={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.email && formErrors.email ? 'border-red-500' : 'border-gray-300'}`}
+                                className={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.email && formErrors.email ? 'border-red-500' : 'border-gray-300'}`}
                                 placeholder="john.doe@company.com" 
                             />
                             {formTouched.email && formErrors.email && (
@@ -311,8 +311,8 @@ export default function Contact () {
                             )}
                         </div>
 
-                        <div class="col-span-2 md:col-span-1">
-                            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone
+                        <div className="col-span-2 md:col-span-1">
+                            <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900">Phone
                                 number</label>
                             <input 
                                 type="tel" 
@@ -321,7 +321,7 @@ export default function Contact () {
                                 value={formData.phone} 
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                class={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.phone && formErrors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                                className={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${formTouched.phone && formErrors.phone ? 'border-red-500' : 'border-gray-300'}`}
                                 placeholder="+255 712345678" 
                             />
                             {formTouched.phone && formErrors.phone && (
@@ -329,64 +329,64 @@ export default function Contact () {
                             )}
                         </div>
 
-                        <div class="col-span-2">
-                            <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] mt-6 mb-2">What service do you need?</h3>
+                        <div className="col-span-2">
+                            <h3 className="font-normal text-[18px] leading-7 tracking-[0.02em] mt-6 mb-2">What service do you need?</h3>
                             {formTouched.service && formErrors.service && (
                                 <p className="mb-4 text-sm font-bold text-red-600">{formErrors.service}</p>
                             )}
-                            <div class="grid grid-cols-3 mb-2">
-                                <div class="flex items-center mb-4">
+                            <div className="grid grid-cols-3 mb-2">
+                                <div className="flex items-center mb-4">
                                     <input id="checkbox-web-app" type="checkbox" value="Web App" name="service" checked={selectedServices.includes("Web App")}  onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
-                                    <label for="checkbox-web-app" class="ml-2 text-sm font-medium text-gray-900">Web
+                                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label htmlFor="checkbox-web-app" className="ml-2 text-sm font-medium text-gray-900">Web
                                         App</label>
                                 </div>
-                                <div class="flex items-center mb-4">
+                                <div className="flex items-center mb-4">
                                     <input id="checkbox-mobile-app" type="checkbox" value="Mobile App" name="service" checked={selectedServices.includes("Mobile App")} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
-                                    <label for="checkbox-mobile-app" class="ml-2 text-sm font-medium text-gray-900">Mobile
+                                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label htmlFor="checkbox-mobile-app" className="ml-2 text-sm font-medium text-gray-900">Mobile
                                         App</label>
                                 </div>
-                                <div class="flex items-center mb-4">
+                                <div className="flex items-center mb-4">
                                     <input id="checkbox-system-dev" type="checkbox" value="System Development" name="service" checked={selectedServices.includes("System Development")}  onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
-                                    <label for="checkbox-system-dev" class="ml-2 text-sm font-medium text-gray-900">System
+                                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label htmlFor="checkbox-system-dev" className="ml-2 text-sm font-medium text-gray-900">System
                                         Development</label>
                                 </div>
-                                <div class="flex items-center mb-4">
+                                <div className="flex items-center mb-4">
                                     <input id="checkbox-db-mgmt" type="checkbox" value="Database Management" name="service" checked={selectedServices.includes("Database Management")} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
-                                    <label for="checkbox-db-mgmt" class="ml-2 text-sm font-medium text-gray-900">Database Management
+                                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label htmlFor="checkbox-db-mgmt" className="ml-2 text-sm font-medium text-gray-900">Database Management
                                     </label>
                                 </div>
-                                <div class="flex items-center mb-4">
+                                <div className="flex items-center mb-4">
                                     <input id="checkbox-graphic-design" type="checkbox" value="Graphics Design" name="service" checked={selectedServices.includes("Graphics Design")} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
-                                    <label for="checkbox-graphic-design" class="ml-2 text-sm font-medium text-gray-900">Graphic
+                                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label htmlFor="checkbox-graphic-design" className="ml-2 text-sm font-medium text-gray-900">Graphic
                                         Design</label>
                                 </div>
-                                <div class="flex items-center mb-4">
+                                <div className="flex items-center mb-4">
                                     <input id="checkbox-cloud-deploy" type="checkbox" value="Cloud Deployment" name="service" checked={selectedServices.includes("Cloud Deployment")} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
-                                    <label for="checkbox-cloud-deploy" class="ml-2 text-sm font-medium text-gray-900">Cloud
+                                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label htmlFor="checkbox-cloud-deploy" className="ml-2 text-sm font-medium text-gray-900">Cloud
                                         Deployment</label>
                                 </div>
-                                <div class="flex items-center mb-4">
+                                <div className="flex items-center mb-4">
                                     <input id="checkbox-uiux" type="checkbox" value="UI/UX" name="service" checked={selectedServices.includes("UI/UX")} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
-                                    <label for="checkbox-uiux" class="ml-2 text-sm font-medium text-gray-900">UI/UX</label>
+                                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label htmlFor="checkbox-uiux" className="ml-2 text-sm font-medium text-gray-900">UI/UX</label>
                                 </div>
-                                <div class="flex items-center mb-4">
+                                <div className="flex items-center mb-4">
                                     <input id="checkbox-other" type="checkbox" value="Other" name="service" checked={selectedServices.includes("Other")} onChange={handleChange}
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
-                                    <label for="checkbox-other" class="ml-2 text-sm font-medium text-gray-900">Other</label>
+                                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                    <label htmlFor="checkbox-other" className="ml-2 text-sm font-medium text-gray-900">Other</label>
                                 </div>
                             </div>
 
                         </div>
 
-                        <div class="col-span-2">
-                            <h3 class="font-normal text-[18px] leading-7 tracking-[0.02em] mb-2">Message</h3>
+                        <div className="col-span-2">
+                            <h3 className="font-normal text-[18px] leading-7 tracking-[0.02em] mb-2">Message</h3>
                             <textarea 
                                 id="message" 
                                 rows="4" 
@@ -394,16 +394,16 @@ export default function Contact () {
                                 value={formData.message} 
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                class={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border focus:ring-blue-500 focus:border-blue-500 ${formTouched.message && formErrors.message ? 'border-red-500' : 'border-gray-300'}`}
+                                className={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border focus:ring-blue-500 focus:border-blue-500 ${formTouched.message && formErrors.message ? 'border-red-500' : 'border-gray-300'}`}
                                 placeholder="Write your thoughts here..."
                             ></textarea>
                             {formTouched.message && formErrors.message && (
                                 <p className="mt-1 text-sm font-bold text-red-600">{formErrors.message}</p>
                             )}
                         </div>
-                        <div class="flex gap-5 items-center mt-[20px]">
+                        <div className="flex gap-5 items-center mt-[20px]">
                             <button 
-                                class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition 
+                                className="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition 
                                 disabled:bg-gray-500 disabled:cursor-not-allowed"
                                 type='submit' 
                                 disabled={isSubmitting}>
